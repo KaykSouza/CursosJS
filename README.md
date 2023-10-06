@@ -2,7 +2,7 @@
 n.toString(n) //converter pra string
 String(n) //o javascript faz a coversão
 
-parseInt(n) //converter pra inteiro
+parseInt(n) //converter pra inteiro 
 parseFloat(n) //converter pra decimal
 Number(n) //o javascript faz a coversão automaticamente
 
