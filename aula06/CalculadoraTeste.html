@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa...</title>
+    <style>
+        body 
+        {
+            background-color: lightblue;
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1 
+        {
+            color: 
+            rgb(255, 255, 107);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1> 
+    <p>The gods of Olympus has abanddoned me...</p>
+
+    <script>
+
+        function recarregarPagina(){
+            window.location.reload();
+        }
+        function verificaNúmero1(n1){
+            if(isNaN(n1)){
+                return alert("Seu animal isso não é um número");
+            } 
+            
+
+        }
+
+        function calculadora(){
+
+            alert("Lista das operações Matemáticas disponíveis:\n+ = adição\n- = subtração\n* = multiplicação\n/ = divisão");
+            const n1 = parseFloat(prompt("Digite o primeiro número!"));
+            verificaNúmero1();
+            const operaçãoMatematica = prompt("Digite a operação matemática desejada");
+            const n2 = parseFloat(prompt("Digite o segundo número!"));
+
+            if(operaçãoMatematica === "+") {
+                alert("O resultado da conta é " + (n1 + n2));
+            } else if(operaçãoMatematica === "-") {
+                alert("O resultado da conta é " + (n1 - n2));
+            } else if(operaçãoMatematica === "*") {
+                alert("O resultado da conta é " + (n1 * n2));
+            } else if(operaçãoMatematica === "/") {
+                alert("O resultado da conta é " + (n1 / n2));
+            }
+
+        }
+
+        calculadora();
+    </script>
+</body>
+</html>
