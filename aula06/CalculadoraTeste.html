@@ -1,55 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro programa...</title>
     <style>
-        body 
-        {
+        body {
             background-color: lightblue;
             color: white;
             font: normal 20pt Arial;
         }
-        h1 
-        {
-            color: 
-            rgb(255, 255, 107);
+
+        h1 {
+            color:
+                rgb(255, 255, 107);
         }
     </style>
 </head>
+
 <body>
-    <h1>Hello World</h1> 
+    <h1>Hello World</h1>
     <p>The gods of Olympus has abanddoned me...</p>
 
     <script>
 
-        function recarregarPagina(){
+        function recarregarPagina() {
             window.location.reload();
         }
-        function verificaNúmero1(n1){
-            if(isNaN(n1 === true)){
-                return alert("Seu animal isso não é um número");
-                calculadora();
+
+        // function verificaNumero(mensagemPrompt, mensagemErro) {
+
+        //     if (mensagemPrompt == null || mensagemPrompt.trim() == "") {
+        //         mensagemPrompt = "Digite um numero";
+        //     }
+
+        //     if (mensagemErro == null || mensagemErro.trim() == "") {
+        //         mensagemErro = "Herrar é Umano";
+        //     }
+
+
+        //     let numero = parseFloat("brobinha");
+        //     while (isNaN(numero)) {
+        //         numero = parseFloat(prompt(mensagemPrompt));
+
+        //         if (isNaN(numero)) {
+        //             alert(mensagemErro);
+        //             continue;
+        //         }
+
+        //         return numero;
+        //     }
+        // }
+
+
+        function verificaNumero(mensagemPrompt, mensagemErro) {
+
+            if (mensagemPrompt == null || mensagemPrompt.trim() == "") {
+                mensagemPrompt = "Digite um numero";
+            }
+
+            if (mensagemErro == null || mensagemErro.trim() == "") {
+                mensagemErro = "Herrar é Umano";
+            }
+
+
+            let numero = parseFloat("brobinha");
+
+            numero = parseFloat(prompt(mensagemPrompt));
+
+            if (isNaN(numero)) {
+                alert(mensagemErro);
+                return verificaNumero(mensagemPrompt, mensagemErro)
+            }
+
+            return numero;
+        }
+
+
+        function verificaOperacao() {
+
+            let op = "";
+            while (!(op === "+" || op === "-" || op === "*" || op === "/")) {
+                op = prompt("Digite a operação matemática desejada").trim();
+                if (op === "+" || op === "-" || op === "*" || op === "/") {
+                    return op;
+                }
+
+                alert("operação inválida");
             }
         }
 
-        function calculadora(){
+        function calculadora() {
 
             alert("Lista das operações Matemáticas disponíveis:\n+ = adição\n- = subtração\n* = multiplicação\n/ = divisão");
-            const n1 = parseFloat(prompt("Digite o primeiro número!"));
-            verificaNúmero1();
-            const operaçãoMatematica = prompt("Digite a operação matemática desejada");
-            const n2 = parseFloat(prompt("Digite o segundo número!"));
 
-            if(operaçãoMatematica === "+") {
+            let n1 = verificaNumero("digite o primeiro numero", "mas tu eh burro mesmo");
+
+            const operaçãoMatematica = verificaOperacao();
+
+            const n2 = verificaNumero("digite o segundo numero", "mas tu não aprende mesmo");
+
+
+            if (isNaN(n1) || isNaN(n2)) {
+                console.log('nunca vai entrar aqui')
+                return;
+            }
+
+
+            if (operaçãoMatematica === "+") {
                 alert("O resultado da conta é " + (n1 + n2));
-            } else if(operaçãoMatematica === "-") {
+            } else if (operaçãoMatematica === "-") {
                 alert("O resultado da conta é " + (n1 - n2));
-            } else if(operaçãoMatematica === "*") {
+            } else if (operaçãoMatematica === "*") {
                 alert("O resultado da conta é " + (n1 * n2));
-            } else if(operaçãoMatematica === "/") {
+            } else if (operaçãoMatematica === "/") {
                 alert("O resultado da conta é " + (n1 / n2));
+            } else {
+                alert("operação inválida");
             }
 
         }
@@ -57,4 +125,5 @@
         calculadora();
     </script>
 </body>
+
 </html>
