@@ -5,7 +5,6 @@ function validar() {
 
     if(txtp === 'Brasil') {
         res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`;
-    } else {
-        res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`;
     }
+    res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`;
 }
