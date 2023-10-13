@@ -9,4 +9,4 @@ Number(n) //o javascript faz a coversão automaticamente
 n1.toLocateString('pt-BR', {style: 'currency', currency: 'BRL'}) //coverte moeda
 
 ** = potência
-% = restos da divsão
+% = restos da divisão
